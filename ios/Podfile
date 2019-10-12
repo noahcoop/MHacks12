@@ -37,6 +37,8 @@ target 'MHacks12' do
 
 
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
   target 'MHacks12Tests' do
     inherit! :search_paths
     # Pods for testing

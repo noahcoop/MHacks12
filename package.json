@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@terrylinla/react-native-sketch-canvas": "^0.8.0",
+    "firebase": "^7.2.0",
     "react": "16.9.0",
     "react-native": "0.61.2",
-    "react-native-camera": "^3.7.1"
+    "react-native-camera": "^3.7.1",
+    "react-native-fs": "^2.14.1",
+    "react-native-view-shot": "^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "7.6.4",
