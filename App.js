@@ -5,6 +5,10 @@ import { SketchCanvas } from '@terrylinla/react-native-sketch-canvas';
 import ViewShot from 'react-native-view-shot'
 import ImageEditor from "@react-native-community/image-editor";
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import List from './List'
+import {createSwitchNavigator, createAppContainer, SwitchNavigator, NavigationEvents} from "react-navigation";
+import {createStackNavigator} from "react-navigation-stack"
+
 
 
 
@@ -12,7 +16,7 @@ var AWS = require('aws-sdk');
 var s3 = new AWS.S3({accessKeyId:'AKIA3BSGO4O2CBIRNSMG', secretAccessKey:'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', region:'us-east-1'});
 
 
-export default class App extends Component
+class Home extends Component
 {
     constructor(props) {
         super(props);
@@ -142,7 +146,7 @@ export default class App extends Component
               <Icon size = {24} color = {'black'} name="star"></Icon>
             </TouchableOpacity>
             <View style = {{width: Dimensions.get('window').width - 210}}></View>
-            <TouchableOpacity onPress={() => {}} style={styles.capture}>
+            <TouchableOpacity onPress={() => {this.props.navigation.navigate("List")}} style={styles.capture}>
               <Icon size = {24} color = {'black'} name="list"></Icon>
             </TouchableOpacity>
           </View>
@@ -289,6 +293,31 @@ export default class App extends Component
     }
   
 
+  const AppNavigator = createStackNavigator({
+
+    Home : {
+      screen : Home,
+      navigationOptions : {
+        header: null,
+      }
+    },
+    List
+  });
+
+  class App extends Component
+  {
+  render() {
+    return (
+        <AppNavigator />
+    );
+  } 
+  }
+
+  App = createAppContainer(AppNavigator);
+
+
+export default App
+    
     
 
 const styles = StyleSheet.create({
@@ -299,7 +328,6 @@ const styles = StyleSheet.create({
     position: 'relative'
   },
   preview: {
-    //flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
     height: Dimensions.get('window').height - 200
