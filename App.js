@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
 import {Dimensions, ActivityIndicator, StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Keyboard, Image, Alert, TouchableOpacity, KeyboardAvoidingView,} from 'react-native';
-import {RNCamera} from 'react-native-camera'
+import {RNCamera} from 'react-native-camera';
 import { SketchCanvas } from '@terrylinla/react-native-sketch-canvas';
-
 
 export default class App extends Component
 {
+    constructor(props) {
+        super(props);
+        this.state = {
+          bestMatch: null
+        };
+      }
+    
     render() {
         return (
           <View style={styles.container}>
@@ -17,12 +23,14 @@ export default class App extends Component
               type={RNCamera.Constants.Type.back}
               flashMode={RNCamera.Constants.FlashMode.on}
             />
+
             <SketchCanvas
-            style={{ flex: 1 }}
+            style={{position: 'relative', height: Dimensions.get('window').height - 100}}
             strokeColor={'red'}
             strokeWidth={7}
             />
-            <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
+
+            <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center', height: 100}}>
               <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.capture}>
                 <Text style={{ fontSize: 14 }}> SNAP </Text>
               </TouchableOpacity>
@@ -42,12 +50,10 @@ export default class App extends Component
     
     const styles = StyleSheet.create({
       container: {
-        flex: 1,
         flexDirection: 'column',
         backgroundColor: 'black',
       },
       preview: {
-        flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'center',
       },
@@ -60,4 +66,11 @@ export default class App extends Component
         alignSelf: 'center',
         margin: 20,
       },
+      info: {
+        fontSize: 20,
+        color: "#ffffff",
+        textAlign: 'center',
+        fontWeight: "900",
+        margin: 10,
+      }
     })
