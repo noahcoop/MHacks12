@@ -9,12 +9,10 @@ import List from './List'
 import {createSwitchNavigator, createAppContainer, SwitchNavigator, NavigationEvents} from "react-navigation";
 import {createStackNavigator} from "react-navigation-stack"
 
-
-
+import PieChart from 'react-native-chart-kit';
 
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3({accessKeyId:'AKIA3BSGO4O2CBIRNSMG', secretAccessKey:'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', region:'us-east-1'});
-
 
 class Home extends Component
 {
@@ -162,12 +160,13 @@ class Home extends Component
           {!this.state.camera && 
           <ViewShot ref="viewShot" options={{ format: "jpg", quality: 0.9 }}>
            
-            <Modal 
+            <Modal
             animationType="slide"
             transparent = {true}
             visible = {this.state.viewModal}
            >
             <View  style = {{width: 250, height: 250, justifyContent: 'center', alignSelf: 'center', backgroundColor: '#fff', borderRadius: 10, marginTop: 100}}>
+              
               <Text style = {{fontWeight: '700', textAlign: 'center', margin: 10}}>{this.state.food}</Text>
               <Text style = {{fontWeight: '500', textAlign: 'center', margin: 10}}>Calories: {this.state.nutrition.calories}</Text>
               <Text style = {{fontWeight: '500', textAlign: 'center', margin: 10}}>Carbs: {this.state.nutrition.carbs}</Text>
@@ -190,12 +189,14 @@ class Home extends Component
                        timestamp: Date.now()
                      })
                      }}>
-                     <Text style = {{fontWeight: '500', textAlign: 'center', margin: 15}}>Add</Text>
+                     <Text style = {{fontWeight: '500', textAlign: 'center', margin: 10}}>Add</Text>
                   </TouchableOpacity>
               </View>
-              </View>
-            </Modal>
 
+              </View>
+            
+            </Modal>
+            
             <ImageBackground
              source = {{uri: this.state.uri}}
              style = {{width: Dimensions.get('window').width, height: Dimensions.get('window').height - 200}}>
