@@ -190,6 +190,12 @@ PODS:
     - React
   - react-native-camera/RN (3.7.1):
     - React
+  - react-native-image-editor (2.0.2):
+    - React
+    - React-RCTImage
+  - react-native-photo-manipulator (1.1.0):
+    - React
+    - WCPhotoManipulator
   - react-native-view-shot (3.0.2):
     - React
   - React-RCTActionSheet (0.61.2):
@@ -231,6 +237,9 @@ PODS:
     - React
   - RNSketchCanvas (0.8.0):
     - React
+  - RNVectorIcons (6.6.0):
+    - React
+  - WCPhotoManipulator (0.0.10)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -251,6 +260,8 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-camera (from `../node_modules/react-native-camera`)
+  - "react-native-image-editor (from `../node_modules/@react-native-community/image-editor`)"
+  - react-native-photo-manipulator (from `../node_modules/react-native-photo-manipulator`)
   - react-native-view-shot (from `../node_modules/react-native-view-shot`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -265,11 +276,13 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNFS (from `../node_modules/react-native-fs`)
   - "RNSketchCanvas (from `../node_modules/@terrylinla/react-native-sketch-canvas`)"
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
+    - WCPhotoManipulator
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -302,6 +315,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-camera:
     :path: "../node_modules/react-native-camera"
+  react-native-image-editor:
+    :path: "../node_modules/@react-native-community/image-editor"
+  react-native-photo-manipulator:
+    :path: "../node_modules/react-native-photo-manipulator"
   react-native-view-shot:
     :path: "../node_modules/react-native-view-shot"
   React-RCTActionSheet:
@@ -328,6 +345,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-fs"
   RNSketchCanvas:
     :path: "../node_modules/@terrylinla/react-native-sketch-canvas"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -348,6 +367,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 8909917ff7d8f21a57e443a866fd8d4560e50c65
   React-jsinspector: 111d7d342b07a904c400592e02a2b958f1098b60
   react-native-camera: 574d8c9b8bfe08af65c12da2a1ade397a6374152
+  react-native-image-editor: 57e990c4407cfe52b291418b836ef9f6dfefb205
+  react-native-photo-manipulator: 9f01695c3b8ba2c58c475715b3f6addc4b99fa5e
   react-native-view-shot: a94dce9b44d7846edd1204ad6f0bd88f64c29cc0
   React-RCTActionSheet: 89b037c0fb7d2671607cb645760164e7e0c013f6
   React-RCTAnimation: e3cefa93c38c004c318f7ec04b883eb14b8b8235
@@ -361,8 +382,10 @@ SPEC CHECKSUMS:
   ReactCommon: 5848032ed2f274fcb40f6b9ec24067787c42d479
   RNFS: a8fbe7060fa49157d819466404794ad9c58e58cf
   RNSketchCanvas: 6939b18677cd1794151cc3d8eb5a0a2158a4a05b
+  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
+  WCPhotoManipulator: 68945a9d5245b2a8ab0a797c6333b0d4bc7c0547
   Yoga: 14927e37bd25376d216b150ab2a561773d57911f
 
-PODFILE CHECKSUM: 65fdc025c820641b03a45357402a00cda90ed0f7
+PODFILE CHECKSUM: c9a2dbf3d57681dc0aaed6d26a5f024da6c742c8
 
 COCOAPODS: 1.6.1

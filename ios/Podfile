@@ -34,10 +34,10 @@ target 'MHacks12' do
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+pod 'react-native-image-editor', :path => '../node_modules/@react-native-community/image-editor'
 
 
-
-  pod 'RNFS', :path => '../node_modules/react-native-fs'
 
   target 'MHacks12Tests' do
     inherit! :search_paths
