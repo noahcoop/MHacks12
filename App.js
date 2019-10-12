@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Dimensions, ActivityIndicator, StyleSheet, Text, View, TextInput, TouchableWithoutFeedback, Keyboard, Image, Alert, TouchableOpacity, KeyboardAvoidingView,} from 'react-native';
 import {RNCamera} from 'react-native-camera'
+import { SketchCanvas } from '@terrylinla/react-native-sketch-canvas';
+
 
 export default class App extends Component
 {
@@ -14,6 +16,11 @@ export default class App extends Component
               style={styles.preview}
               type={RNCamera.Constants.Type.back}
               flashMode={RNCamera.Constants.FlashMode.on}
+            />
+            <SketchCanvas
+            style={{ flex: 1 }}
+            strokeColor={'red'}
+            strokeWidth={7}
             />
             <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
               <TouchableOpacity onPress={this.takePicture.bind(this)} style={styles.capture}>
