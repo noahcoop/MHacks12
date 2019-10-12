@@ -5,12 +5,36 @@ import { SketchCanvas } from '@terrylinla/react-native-sketch-canvas';
 import ViewShot from 'react-native-view-shot'
 import ImageEditor from "@react-native-community/image-editor";
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import PieChart from 'react-native-chart-kit';
 
 
 
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3({accessKeyId:'AKIA3BSGO4O2CBIRNSMG', secretAccessKey:'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', region:'us-east-1'});
 
+const data = [
+  {
+    name: "Fat",
+    population: this.state.nutrition.fat,
+    color: "green",
+    legendFontColor: "#7F7F7F",
+    legendFontSize: 15
+  },
+  {
+    name: "Protein",
+    population: this.state.nutrition.protein,
+    color: "blue",
+    legendFontColor: "#7F7F7F",
+    legendFontSize: 15
+  },
+  {
+    name: "Carb",
+    population: this.state.nutrition.carbs,
+    color: "red",
+    legendFontColor: "#7F7F7F",
+    legendFontSize: 15
+  }
+];
 
 export default class App extends Component
 {
@@ -158,12 +182,24 @@ export default class App extends Component
           {!this.state.camera && 
           <ViewShot ref="viewShot" options={{ format: "jpg", quality: 0.9 }}>
            
-            <Modal 
+            <Modal
             animationType="slide"
             transparent = {true}
             visible = {this.state.viewModal}
            >
             <View  style = {{width: 250, height: 250, justifyContent: 'center', alignSelf: 'center', backgroundColor: '#fff', borderRadius: 10, marginTop: 100}}>
+              
+              <PieChart>
+                data="{data}"
+                width="{screenWidth}"
+                height="{220}"
+                chartConfig="{chartConfig}"
+                accessor="population"
+                backgroundColor="transparent"
+                paddingLeft="15"
+                absolute
+              </PieChart>
+              
               <Text style = {{fontWeight: '700', textAlign: 'center', margin: 10}}>{this.state.food}</Text>
               <Text style = {{fontWeight: '500', textAlign: 'center', margin: 10}}>Calories: {this.state.nutrition.calories}</Text>
               <Text style = {{fontWeight: '500', textAlign: 'center', margin: 10}}>Carbs: {this.state.nutrition.carbs}</Text>
@@ -189,9 +225,11 @@ export default class App extends Component
                      <Text style = {{fontWeight: '500', textAlign: 'center', margin: 15}}>Add</Text>
                   </TouchableOpacity>
               </View>
-              </View>
-            </Modal>
 
+              </View>
+            
+            </Modal>
+            
             <ImageBackground
              source = {{uri: this.state.uri}}
              style = {{width: Dimensions.get('window').width, height: Dimensions.get('window').height - 200}}>
