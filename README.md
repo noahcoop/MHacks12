@@ -9,12 +9,12 @@ https://www.youtube.com/watch?v=e75R9pz_eXQ
 https://devpost.com/software/seefood-o1hzvj
 
 To run after cloning:
-`cd ~/.../MHacks12`
-`npm install`
-`cd ios`
-`pod install`
-`cd ..`
-`react-native run-ios`
+# `cd ~/.../MHacks12`
+# `npm install`
+# `cd ios`
+# `pod install`
+# `cd ..`
+# `react-native run-ios`
 
 Reuqirements:
 1) iOS 13 Simulator/Device
