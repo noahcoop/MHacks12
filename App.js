@@ -16,7 +16,7 @@ console.ignoredYellowBox = ['Warning: Each', 'Warning: Failed'];
 
 
 var AWS = require('aws-sdk');
-var s3 = new AWS.S3({accessKeyId:'AKIA3BSGO4O2CBIRNSMG', secretAccessKey:'50+4dxnzS/3NMkhQnaNfAnjAWScdSYlv1qKPMuVS', region:'us-east-1'});
+var s3 = new AWS.S3({accessKeyId:'<YOUR_S3_ACCESS_ID>', secretAccessKey:'<YOUR_S3_SECRET_ACCESS_KEY>', region:'us-east-1'});
 
 class Home extends Component
 {
